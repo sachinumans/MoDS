@@ -14,22 +14,24 @@ clear all; clc;
         r1 = 2; %m
         r2 = 2.5; %m
         r3 = 0.5; %m
+        r4 = 0.5; %m
         
         %Tubes
         rt1 = 0.1; %m
         rt2 = 0.05; %m
         rt3 = 0.3; %m
+        rt4 = 0.4; %m
         
         L1 = 0.7; %m
         L2 = 0.9; %m
         L3 = 4; %m
+        L4 = 0.9; %m
         
     %%System parameters - mechanical domain
         R1 = 0.02; %m
         R2 = 0.08; %m
         J = 0.025; %kg m^2
-        syms eps(x)
-        eps(x) = sqrt(x+1.5)/(x+1.5); %Drag function
+        eps = 0.3; %Drag function
         
     %%System parameters - electrical domain
         Kr = 0.3;
@@ -40,8 +42,12 @@ clear all; clc;
         A1 = pi*r1^2; %m^2
         A2 = pi*r2^2; %m^2
         beta3 = (pi*r3^4)/(8*dyn_vis*L3);
+        betaT = (pi*r4^4)/(8*dyn_vis*L4);
         
-        
-        
-        
-        
+%% Initial state
+l_R0 = 3;
+l_10 = 4;
+l_20 = 1;
+l_30 = 3;
+thetad0 = 0;
+uc0 = 0;
