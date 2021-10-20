@@ -10,28 +10,38 @@ clear all; clc;
     
     %%System parameters - fluid domain
         %Tanks and resevoir
-        r0_R = 3; %m
-        r1 = 2; %m
-        r2 = 2.5; %m
-        r3 = 0.5; %m
-        r4 = 0.5; %m
+        r0_R = 1; %m
+        r1 = 1; %m
+        r2 = 1.5; %m
+        r3 = 2; %m
         
         %Tubes
         rt1 = 0.1; %m
-        rt2 = 0.05; %m
+        rt2 = 0.2; %m
         rt3 = 0.3; %m
-        rt4 = 0.4; %m
+        rt4 = 0.15; %m
+        rtt = 0.1; %m
+        rtOut = 0.05; %m
+        h1 = 2; %m
         
         L1 = 0.7; %m
         L2 = 0.9; %m
         L3 = 4; %m
         L4 = 0.9; %m
+        Lout = 0.3; %m
+        
+        %Sensors
+        ls1 = 1; %m
+        ls2 = 1.5; %m
+        ls3 = 3; %m
+        ls4 = 1; %m
+        
         
     %%System parameters - mechanical domain
+        tau = 0.3;
         R1 = 0.02; %m
         R2 = 0.08; %m
         J = 0.025; %kg m^2
-        eps = 0.3; %Drag function
         
     %%System parameters - electrical domain
         Kr = 0.3;
@@ -39,15 +49,8 @@ clear all; clc;
         R = 2000; %ohm
         
     %%Dependent constants
-        A1 = pi*r1^2; %m^2
-        A2 = pi*r2^2; %m^2
-        beta3 = (pi*r3^4)/(8*dyn_vis*L3);
-        betaT = (pi*r4^4)/(8*dyn_vis*L4);
-        
-%% Initial state
-l_R0 = 3;
-l_10 = 4;
-l_20 = 1;
-l_30 = 3;
-thetad0 = 0;
-uc0 = 0;
+        beta3 = (pi*rt3^4)/(8*dyn_vis*L3);
+        beta4 = (pi*rt4^4)/(8*dyn_vis*L4);
+        betaT = (pi*rtt^4)/(8*dyn_vis*L4);
+
+save("SystemConstants.mat")
