@@ -9,10 +9,10 @@ l_20 = 1;
 l_30 = 2;
 thetad0 = 0.5;
 uc0 = 0.1;
-x0 = [l_R0; l_10; l_20; l_30; thetad0; uc0; 1; 1; 1];
+x0 = [l_R0; l_10; l_20; l_30; thetad0; uc0; 1; 1; 0];
 
 %% Input
-u = @(t)(sin(t)+1)*5;
+u = @(t)(sin(t)+1)*5 + 0.75*t;
 
 ut = linspace(simT(1), simT(2), 50);
 U = u(ut);
