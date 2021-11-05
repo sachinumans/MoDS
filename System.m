@@ -22,7 +22,7 @@ clear all; clc;
         rt4 = 0.15; %m
         rtt = 0.1; %m
         rtOut = 0.05; %m
-        h1 = 2; %m
+        h1 = 1; %m
         
         L1 = 0.7; %m
         L2 = 0.9; %m
@@ -41,7 +41,7 @@ clear all; clc;
         tau = 0.3;
         R1 = 0.02; %m
         R2 = 0.08; %m
-        J = 0.025; %kg m^2
+        J = 0.25; %kg m^2
         
     %%System parameters - electrical domain
         Kr = 0.3;
