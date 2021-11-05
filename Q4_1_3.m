@@ -1,6 +1,6 @@
 clear all; clc; close all;
 %% Simulation settings
-simT = [0, 300];
+simT = [0, 600];
 
 %% Initial state
 l_R0 = 3;
@@ -32,37 +32,45 @@ mkdir(strjoin([pwd TimeNow], ""));
 figure("Name","Water levels");
 subplot(2,2,1);
 plot(t, x(:,1));
+xlabel("t[s]"); ylabel("l[m]"); 
 title('Reservoir')
 
 subplot(2,2,2);
 plot(t, x(:,2));
+xlabel("t[s]"); ylabel("l[m]"); 
 title('Tank 1')
 
 subplot(2,2,3);
 plot(t, x(:,3));
+xlabel("t[s]"); ylabel("l[m]"); 
 title('Tank 2')
 
 subplot(2,2,4);
 plot(t, x(:,4));
+xlabel("t[s]"); ylabel("l[m]"); 
 title('Tank 3')
 savefig(gcf, strjoin(string([pwd TimeNow "\WL"]), ""));
 
 figure("Name","Input, Output");
 subplot(1,2,1);
 plot(t, u(t));
+xlabel("t[s]"); ylabel("q[m^3/s]"); 
 title('$w_{in}$', "Interpreter", "latex")
 subplot(1,2,2);
 plot(t, Output);
+xlabel("t[s]"); ylabel("q[m^3/s]"); 
 title('$w_{out}$', "Interpreter", "latex")
 savefig(gcf, strjoin(string([pwd TimeNow "\InOut"]), ""));
 
 figure("Name","Mechanical and electrical domain");
 subplot(1,2,1);
 plot(t, x(:,5));
+xlabel("t[s]"); ylabel("[rad/s]"); 
 title('$\dot \theta_2$', "Interpreter", "latex")
 
 subplot(1,2,2);
 plot(t, x(:,6));
+xlabel("t[s]"); ylabel("[V]"); 
 title('$u_c$', "Interpreter", "latex")
 savefig(gcf, strjoin(string([pwd TimeNow "\Mech"]), ""));
 

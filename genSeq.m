@@ -1,6 +1,6 @@
 function [ranSeq] = genSeq(seqLen)
-Elements = string(zeros(3,2));
-for i=1:3
+Elements = string(zeros(4,2));
+for i=1:4
     Elements(i, :) = ["on"+string(i), "off"+string(i)];
 end
 Elements = Elements(:);
