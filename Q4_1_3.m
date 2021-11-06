@@ -12,9 +12,9 @@ uc0 = 0.1;
 x0 = [l_R0; l_10; l_20; l_30; thetad0; uc0; 1; 1; 0];
 
 %% Input
-u = @(t)(sin(t)+1)*0.5 + 0.005*t;
+u = @(t)(sin(t/30/pi)+1)*0.5 + 0.005*t;
 
-ut = linspace(simT(1), simT(2), 50);
+ut = linspace(simT(1), simT(2), 1200);
 U = u(ut);
 
 %% Simulation
